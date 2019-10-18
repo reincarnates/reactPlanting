@@ -20,3 +20,138 @@
 .App-link {
   color: #09d3ac;
 }
+
+*{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tab{
+  width: 960px;
+  height: 480px;
+  position: relative;
+  overflow: hidden;
+}
+
+.tab ul{
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  transition: .5s;
+}
+
+.tab ul li{
+  height: 100%;
+  width: 960px;
+  float: left;
+}
+
+.tab ul li img{
+  width: 100%;
+  height: 100%;
+}
+
+.tab ol{
+  z-index: 20;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 6px;
+}
+
+.tab ol li{
+  float: left;
+  width: 8px;
+  height: 8px;
+  background-color: #fff;
+  margin: 0 5px;
+  cursor: pointer;
+  border-radius: 50%;
+  transform: scale(1);
+  transition: .3s;
+}
+
+.tab ol li.active{
+  transform: scale(2);
+}
+
+.left{
+  width: 50px;
+  height: 100%;
+  z-index: 30;
+  background: rgba(0, 0, 0, .5);
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.right{
+  width: 50px;
+  height: 100%;
+  z-index: 30;
+  background: rgba(0, 0, 0, .5);
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform: scale(-1);
+}
+
+.left::after{
+  content: '';
+  width: 14px;
+  height: 5px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transform-origin: left center;
+}
+
+.left::before{
+  content: '';
+  width: 14px;
+  height: 5px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  top: 50.5%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transform-origin: left center;
+}
+
+.right::after{
+  content: '';
+  width: 14px;
+  height: 5px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) rotate(45deg);
+  transform-origin: left center;
+}
+
+.right::before{
+  content: '';
+  width: 14px;
+  height: 5px;
+  background: white;
+  position: absolute;
+  left: 50%;
+  top: 50.5%;
+  transform: translate(-50%, -50%) rotate(-45deg);
+  transform-origin: left center;
+}
+
+.line{
+  width: 100%;
+  height: 10px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: rgba(255, 255, 255, .7);
+  z-index: 50;
+}
